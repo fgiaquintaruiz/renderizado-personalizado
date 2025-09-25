@@ -1,73 +1,29 @@
-# React + TypeScript + Vite
+# 🚀 Proyecto: Funcionalidades Avanzadas en React con TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación de demostración construida con React y TypeScript, enfocada en la implementación de patrones de diseño y técnicas de optimización avanzadas sin usar librerías externas. La aplicación muestra ejemplos prácticos de gestión de estado compleja, inyección de dependencias, renderizado personalizado y validación de formularios.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### ✨ Características Principales
 
-## React Compiler
+* **Renderizado Personalizado (`React.memo` y `useCallback`)**: Un sistema de renderizado optimizado que previene la re-renderización de componentes hijos cuando sus props no han cambiado.
+* **Hook de Gestión de Estado Complejo (`useReducer`)**: Un hook personalizado (`useForm`) para manejar el estado de un formulario con múltiples campos de manera predecible y organizada, facilitando la validación y el reseteo.
+* **Sistema de Inyección de Dependencias (`Context API`)**: Un patrón para compartir datos globales (como un tema de la interfaz de usuario) a través de la aplicación sin tener que pasar props manualmente por cada componente. Se implementa con `React.createContext` y un hook `useTheme` personalizado.
+* **Validación de Formularios**: Lógica de validación integrada en el hook `useForm` que verifica que los campos obligatorios no estén vacíos y que los datos tengan un formato válido. Los mensajes de error se muestran dinámicamente.
+* **Popups y Notificaciones**: Componentes modales y de notificación en la interfaz de usuario para mostrar feedback al usuario (por ejemplo, después de un envío de formulario exitoso) o datos de manera no intrusiva.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+### 🛠️ Tecnologías Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* **React**: Biblioteca principal para la construcción de la interfaz de usuario.
+* **TypeScript**: Lenguaje que añade tipado estático al proyecto para mayor robustez y mantenimiento.
+* **Vite**: Herramienta de construcción (`bundler`) moderna y rápida para el entorno de desarrollo.
+* **ESLint**: Herramienta de linting para mantener la consistencia y calidad del código.
+* **CSS**: Para estilizar la interfaz y centrar el contenido de la aplicación.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 📂 Estructura de Carpetas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+El proyecto sigue una **estructura clásica por tipo de archivo**, facilitando la organización de los componentes, hooks y otros archivos.
